@@ -1,0 +1,26 @@
+# Python bytecode and build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environment (rebuild it with `uv sync`)
+.venv/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Downloaded NASA data: large and re-downloadable. Keep only the empty folder.
+data/*
+!data/.gitkeep
+
+# VibeWise learning-mode notes. Delete this line to commit them.
+.vibe-wise/
+
+# OS files
+.DS_Store
+Thumbs.db

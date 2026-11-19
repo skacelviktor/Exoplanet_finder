@@ -1,0 +1,24 @@
+[project]
+name = "exoplanet-finder"
+version = "0.1.0"
+description = "1D CNN that detects exoplanet transits in NASA Kepler light curves and separates real planets from false positives such as eclipsing binaries."
+authors = [
+    { name = "Viktor Skácel", email = "skacelviktor@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "lightkurve>=2.6.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.5",
+    "pandas>=2.3.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "pytest>=9.2.0",
+]
