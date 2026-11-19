@@ -1,4 +1,4 @@
-"""Tests for exoplanet_finder.folding: fold() and bin_curve().
+"""Tests for exoplanet_finder.data_preparation.folding: fold() and bin_curve().
 
 Every light curve here is a small, hand-made array of shape (N, 2):
 column 0 is time (or phase, after folding) and column 1 is flux.
@@ -7,7 +7,7 @@ column 0 is time (or phase, after folding) and column 1 is flux.
 import numpy as np
 import pytest
 
-from exoplanet_finder.folding import bin_curve, fold
+from exoplanet_finder.data_preparation.folding import bin_curve, fold
 
 
 def make_curve(times, fluxes):

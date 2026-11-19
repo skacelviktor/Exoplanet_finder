@@ -38,7 +38,11 @@ uv run pytest
 ## Project structure
 
 ```
-src/exoplanet_finder/   reusable code (folding.py: fold, bin_curve)
+src/exoplanet_finder/
+  data_preparation/     detrending, phase folding and binning (folding.py: fold, bin_curve)
+  download_data/        KOI table and Kepler light-curve downloads
+  visualizations/       plotting helpers
+  paths.py              project data paths
 tests/                  pytest tests
 notebooks/              data exploration
 data/                   downloaded data (not committed)
