@@ -47,3 +47,7 @@ data/                   downloaded data (not committed)
 ## Reference
 
 Shallue, C. J. & Vanderburg, A. (2018). Identifying Exoplanets with Deep Learning: A Five-planet Resonant Chain around Kepler-80 and an Eighth Planet around Kepler-90. *The Astronomical Journal*, 155(2), 94.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
