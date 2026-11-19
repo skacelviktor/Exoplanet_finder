@@ -22,3 +22,22 @@ def transit_window_bounds(
     low = -high
 
     return (low, high)
+
+
+def orbit_window_bounds(period: float) -> tuple[float, float]:
+    """Return the ``(low, high)`` bounds of a window covering the whole orbit.
+
+    The window is one full period wide and centered on the transit, which is
+    exactly the range ``[-period / 2, period / 2)`` that ``fold()`` maps every
+    point into, so ``bin_curve()`` keeps all the data. For a circular orbit,
+    a secondary eclipse (if there is one) lands at both ends of this window:
+    phases ``-period / 2`` and ``+period / 2`` are the same moment.
+
+    Args:
+        period: Orbital period in days.
+
+    Returns:
+        ``(-period / 2, period / 2)`` in days.
+    """
+    half_period = period / 2
+    return (-half_period, half_period)
