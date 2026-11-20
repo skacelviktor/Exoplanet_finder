@@ -1,5 +1,7 @@
 """Geometry of the phase window around a transit."""
 
+import numpy as np
+
 
 def transit_window_bounds(
     duration_days: float, n_durations: float
@@ -41,3 +43,24 @@ def orbit_window_bounds(period: float) -> tuple[float, float]:
     """
     half_period = period / 2
     return (-half_period, half_period)
+
+
+def transit_numbers(time: np.ndarray, period: float, t0: float) -> np.ndarray:
+    """Return the number of the nearest transit for every time stamp.
+
+    Transit 0 is the one at ``t0``, transit 1 the next one, transit -1 the
+    one before, and so on. Each point belongs to the transit it is closest
+    to (the same "nearest transit" idea that ``fold()`` uses), so a point
+    just before a transit center gets that transit's number, not the
+    previous one. Use ``transit_numbers(...) % 2`` to split the dips into
+    even (0) and odd (1) ones.
+
+    Args:
+        time: Time stamps in days (BKJD), any shape.
+        period: Orbital period in days.
+        t0: Mid-transit time of transit 0, in days.
+
+    Returns:
+        An integer array with the same shape as ``time``.
+    """
+    return np.floor((time - t0) / period + 0.5).astype(int)
