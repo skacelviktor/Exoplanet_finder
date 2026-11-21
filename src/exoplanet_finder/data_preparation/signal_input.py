@@ -41,7 +41,7 @@ def bin_or_fill(
 
 
 def _fold_and_bin(
-    light_curve: np.ndarray, koi: pd.Series, n_durations: float, n_bins: int
+    light_curve: np.ndarray, koi: pd.Series, n_durations: float = 2, n_bins: int = 200
 ) -> tuple[np.ndarray, bool]:
     """Fold a light curve at a KOI's transits and bin the window around them.
 
